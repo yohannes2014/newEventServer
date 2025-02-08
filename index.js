@@ -28,6 +28,8 @@ mongoose.connect(process.env.MONGO_URL)
   .then(() => console.log('MongoDB connected'))
   .catch((err) => console.log(err));
 
+console.log('Current NODE_ENV:', process.env.NODE_ENV);
+
 // Start server
 const port = process.env.PORT;
 app.listen(port, () => {
