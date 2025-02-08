@@ -59,7 +59,7 @@ export const usersLogin = async (req, res) => {
   const token = jwt.sign({ id: userFound._id  }, process.env.JWT_SECRET, { expiresIn: '1h' });
 
   // Set token as a cookie
-  res.cookie('token', token, { httpOnly: true, /* secure: process.env.NODE_ENV === 'yohannes', */ sameSite: 'None', });
+  res.cookie('token', token, { httpOnly: true, secure: process.env.NODE_ENV === 'yohannes', sameSite: 'None', });
 // success message to client side
   res.status(201).json({login:true, message: 'Login successful', token });
 
